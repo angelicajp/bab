@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buksi</title>
+    <style>
+        body {
+            background-size: cover; 
+            background-position: center; /* Center the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif; /* Clean font */
+            background-color:rgb(255, 239, 242)
+        }
+
+        .letter {
+            width: 600px;  /* Increased width of the letter */
+            height: 500px; /* Increased height of the letter */
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for letter */
+            border: 2px solid #ff99cc; /* Soft pink border */
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px; /* Increased padding for more content space */
+            position: relative;
+            text-align: left; /* Left-aligned text */
+            display: none; /* Initially hidden */
+            z-index: 1; /* Keep letter above background */
+            transition: all 0.5s ease; /* Smooth transition for size change */
+        }
+
+        .letter.expanded {
+            width: 10000px;  /* Expanded width of the letter */
+            height: 600px; /* Expanded height of the letter */
+        }
+
+        .letter h1 {
+            font-size: 32px; /* Larger heading size */
+            color: #ff66b2; /* Bright pink title color */
+            margin-bottom: 10px;
+            text-align: center; /* Centered title */
+        }
+
+        .letter p {
+            color: #333; /* Dark text color */
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 18px; /* Increased font size for better readability */
+        }
+
+        .letter h3 {
+            padding-right: 100px;
+        }
+
+        .letter .signature {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 20px; /* Larger signature size */
+            color: #ff66b2; /* Signature color */
+            text-align: right; /* Right-aligned signature */
+        }
+
+        .envelope {
+            width: 160px; /* Envelope size */
+            height: 80px;
+            background: #ffe5e5; /* Light envelope color */
+            border: 2px solid #ff99cc;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .flap {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: #ff99cc;
+            border-radius: 10px 10px 0 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="envelope" onclick="showMessage()">
+        <div class="flap"></div>
+    </div>
+
+    <div class="letter" id="letterContent">
+        <h1>Dear Sir,</h1>
+        <p>hi sir! it is very cringy bear with me kay last year opportunity huhu ihh luh si oa! anyway ever since gr 7 sir i have been thankful. grabe gid ya from first s.y to last  sy nalang diri sa nasyo you ma teacher tagd kaya grabee. I didn't actually expect for us to actually reunite again pero ari, sabad2 simo gyapon, du bata gamay gapangita away, tsk. Also I didn't expect man for us to be very close or sguro sa tam-an ko nga sabad sabad simo since grade 7 kag pagiging pasapak.. because of it sguro naging close kita.( haha ew) Bsi tak-an kana gle sakon sir hipos2 kalang... sus. haha anyway hi gali kay maam asawa mo!!! hehe wala ko sya gin sugat pag dancsports huhu tne maka interact ta tita asawa ni sir bab! Tapos even though reply mo permi sakon sa chats ko nga ' ahahaha', ka annoying kay mga laba pana bala mga chat ko kag seryus tapos muna lang gin reply! char anyway.. fr seryus nagd... </p>
+        <p>Thank you sir for being there for me, always. pero even though labutaw or you don't really take it seriously, you still show nga you care man as a father figure ko sa school. You have always opened me up to reality and very straightforward ever since, fixing my mistakes, telling me SUPER DUPER HONEST opinions of yours hay... helpful man sya ah haha.. You are a very annoying but not annoying father of mine and you would always pick a fight with me every time pana sir.. mabalos ko always simo abi mo! hehe</p>
+        <p>
+            Sirr... I hope you would never get tired of me po. I know annoying mn ko at some time.. well most of the times pero grabe, bery patient kag ga balos kaman! haha you know I will continue to be super duper sabad anak to you always and 4ever ever more even though i would be in a different school na someday.. next sy to be exact wowowow.  i hope sir since this is my last year here sa nasyo, we could still be able to hang out like FOR REAL FOR REAL nagid ya this time, like not a drawing anymore kind of lagaw na talaga!! Bisan mag college nako sir I would still rant and labutaw with you if I could still get the chance whah wai limtanay ha haha bsi ma miss mo ang fav anak mo hay don't miss me too much... HWAHHAHA oa dugay pa gle matapos ang sy... wla lang advance mag isip nd pwde haawww!! haha tne mag hibi kadi sir hape teachers' day!</p>
+            <h3>FROM UR BOOTFUL ANAK, GELELET JEYD</h3>
+        </div>
+        
+    <script>
+        function showMessage() {
+            const letter = document.getElementById("letterContent");
+            if (letter.style.display === "none" || letter.style.display === "") {
+                letter.style.display = "block"; // Show the letter content
+                setTimeout(() => {
+                    letter.classList.add('expanded'); // Add expanded class after display
+                }, 10); // Slight delay to trigger CSS transition
+                alert("You've opened a letter! Read the message inside.");
+            } else {
+                letter.classList.remove('expanded'); // Remove expanded class
+                setTimeout(() => {
+                    letter.style.display = "none"; // Hide after transition
+                }, 500); // Wait for transition to finish before hiding
+            }
+        }
+
+        // Initially hide the letter content
+        document.getElementById("letterContent").style.display = "none";
+    </script>
+
+</body>
+</html>
